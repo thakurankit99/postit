@@ -45,6 +45,7 @@ import { LanguageComponent } from '@gitroom/frontend/components/layout/language.
 import { useT } from '@gitroom/react/translation/get.transation.service.client';
 import i18next from '@gitroom/react/translation/i18next';
 import { Footer } from '@gitroom/frontend/components/layout/footer';
+import { PostizLogo } from '@gitroom/frontend/components/layout/postiz-logo';
 extend(utc);
 extend(weekOfYear);
 extend(isoWeek);
@@ -105,11 +106,10 @@ export const LayoutSettings = ({ children }: { children: ReactNode }) => {
                   className={clsx(!isGeneral ? 'mt-[12px]' : 'min-w-[80px]')}
                 >
                   {isGeneral ? (
-                    <Image
-                      src="/postiz-text.svg"
+                    <PostizLogo
                       width={80}
                       height={36.5}
-                      alt="Postit by AadyaTech"
+                      className="text-textColor"
                     />
                   ) : (
                     'Postit'

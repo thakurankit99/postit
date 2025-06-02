@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import loadDynamic from 'next/dynamic';
 import { isGeneralServerSide } from '@gitroom/helpers/utils/is.general.server.side';
 import { Footer } from '@gitroom/frontend/components/layout/footer';
+import { PostizLogo } from '@gitroom/frontend/components/layout/postiz-logo';
 const ReturnUrlComponent = loadDynamic(() => import('./return.url.component'));
 export default async function AuthLayout({
   children,
@@ -35,11 +36,10 @@ export default async function AuthLayout({
                 )}
               >
                 {isGeneralServerSide() ? (
-                  <Image
-                    src="/postiz-text.svg"
+                  <PostizLogo
                     width={200}
                     height={91}
-                    alt="Postit by AadyaTech"
+                    className="text-textColor"
                   />
                 ) : (
                   <div className="text-[40px]">{t('gitroom', 'Postit')}</div>
