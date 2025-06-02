@@ -59,7 +59,7 @@ export default async function AuthLayout({
                     />
                   </svg>
                 ) : (
-                  <div className="text-[40px]">{t('gitroom', 'Gitroom')}</div>
+                  <div className="text-[40px]">{t('gitroom', 'Postit')}</div>
                 )}
               </div>
             </div>
