@@ -26,7 +26,7 @@ export const useAddProvider = (update?: () => void) => {
       title: '',
       withCloseButton: false,
       classNames: {
-        modal: 'bg-transparent text-textColor w-[95vw] max-w-[800px]',
+        modal: 'bg-transparent text-textColor',
       },
       children: <AddProviderComponent update={update} {...data} />,
       size: 'auto',
@@ -405,7 +405,7 @@ export const AddProviderComponent: FC<{
             title: '',
             withCloseButton: false,
             classNames: {
-              modal: 'bg-transparent text-textColor w-[95vw] max-w-[600px]',
+              modal: 'bg-transparent text-textColor',
             },
             children: (
               <CustomVariables
@@ -430,7 +430,7 @@ export const AddProviderComponent: FC<{
         title: '',
         withCloseButton: false,
         classNames: {
-          modal: 'bg-transparent text-textColor w-[95vw] max-w-[500px]',
+          modal: 'bg-transparent text-textColor',
         },
         children: (
           <ApiModal update={update} name={name} identifier={identifier} />
@@ -443,12 +443,12 @@ export const AddProviderComponent: FC<{
   const t = useT();
 
   return (
-    <div className="w-full flex flex-col gap-4 md:gap-[20px] rounded-[4px] border border-customColor6 bg-sixth px-3 md:px-[16px] pb-3 md:pb-[16px] relative max-h-[90vh] overflow-y-auto">
+    <div className="w-full flex flex-col gap-[20px] rounded-[4px] border border-customColor6 bg-sixth px-[16px] pb-[16px] relative">
       <div className="flex flex-col">
         <TopTitle title="Add Channel" />
         <button
           onClick={close}
-          className="outline-none absolute end-3 md:end-[20px] top-4 md:top-[20px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"
+          className="outline-none absolute end-[20px] top-[20px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"
           type="button"
         >
           <svg
@@ -466,8 +466,8 @@ export const AddProviderComponent: FC<{
             ></path>
           </svg>
         </button>
-        <h2 className="pt-3 md:pt-[16px] pb-2 md:pb-[10px] text-base md:text-lg">{t('social', 'Social')}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-[10px] justify-items-center justify-center">
+        <h2 className="pt-[16px] pb-[10px]">{t('social', 'Social')}</h2>
+        <div className="grid grid-cols-3 gap-[10px] justify-items-center justify-center">
           {social.map((item) => (
             <div
               key={item.identifier}
@@ -484,7 +484,7 @@ export const AddProviderComponent: FC<{
                   }
                 : {})}
               className={
-                'w-full max-w-[200px] h-[80px] md:h-[100px] text-sm md:text-[14px] bg-input text-textColor relative justify-center items-center flex flex-col gap-2 md:gap-[10px] cursor-pointer rounded-md hover:bg-customColor8 transition-colors'
+                'w-[200px] h-[100px] text-[14px] bg-input text-textColor relative justify-center items-center flex flex-col gap-[10px] cursor-pointer'
               }
             >
               <div>
@@ -521,13 +521,13 @@ export const AddProviderComponent: FC<{
       </div>
       {!isGeneral && (
         <div className="flex flex-col">
-          <h2 className="pb-2 md:pb-[10px] text-base md:text-lg">{t('articles', 'Articles')}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-[10px]">
+          <h2 className="pb-[10px]">{t('articles', 'Articles')}</h2>
+          <div className="grid grid-cols-3 gap-[10px]">
             {article.map((item) => (
               <div
                 key={item.identifier}
                 onClick={showApiButton(item.identifier, item.name)}
-                className="w-full max-w-[120px] h-[80px] md:h-[100px] bg-input text-textColor justify-center items-center flex flex-col gap-2 md:gap-[10px] cursor-pointer rounded-md hover:bg-customColor8 transition-colors"
+                className="w-[120px] h-[100px] bg-input text-textColor justify-center items-center flex flex-col gap-[10px] cursor-pointer"
               >
                 <div>
                   <img

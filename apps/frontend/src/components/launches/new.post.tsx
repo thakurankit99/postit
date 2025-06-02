@@ -18,7 +18,7 @@ export const NewPost = () => {
       closeOnEscape: false,
       withCloseButton: false,
       classNames: {
-        modal: 'w-[95vw] max-w-[1400px] bg-transparent text-textColor',
+        modal: 'w-[100%] max-w-[1400px] bg-transparent text-textColor',
       },
       children: (
         <AddEditModal

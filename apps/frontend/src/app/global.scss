@@ -8,29 +8,6 @@ body,
 html {
   @apply bg-primary;
 }
-
-/* Mobile-specific optimizations */
-@media (max-width: 768px) {
-  .mobile-optimized {
-    @apply text-sm;
-  }
-
-  .mobile-calendar-grid {
-    @apply grid-cols-1 gap-2;
-  }
-
-  .mobile-calendar-item {
-    @apply min-h-[80px] p-2;
-  }
-
-  .mobile-hide {
-    @apply hidden;
-  }
-
-  .mobile-show {
-    @apply block;
-  }
-}
 .box {
   position: relative;
 }

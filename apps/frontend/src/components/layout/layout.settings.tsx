@@ -46,7 +46,6 @@ import { useT } from '@gitroom/react/translation/get.transation.service.client';
 import i18next from '@gitroom/react/translation/i18next';
 import { Footer } from '@gitroom/frontend/components/layout/footer';
 import { PostizLogo } from '@gitroom/frontend/components/layout/postiz-logo';
-import { MobileNavigation } from '@gitroom/frontend/components/layout/mobile-navigation';
 extend(utc);
 extend(weekOfYear);
 extend(isoWeek);
@@ -88,85 +87,59 @@ export const LayoutSettings = ({ children }: { children: ReactNode }) => {
           {user.tier !== 'FREE' && <Onboarding />}
           <Support />
           <ContinueProvider />
-          <div className="min-h-[100vh] w-full max-w-[1440px] mx-auto bg-primary px-3 md:px-6 text-textColor flex flex-col">
+          <div className="min-h-[100vh] w-full max-w-[1440px] mx-auto bg-primary px-6 text-textColor flex flex-col">
             {user?.admin && <Impersonate />}
-            <nav className="flex items-center justify-between py-2 md:py-0">
-              {/* Logo Section */}
+            <nav className="flex items-center justify-between">
               <Link
                 href="/"
-                className="text-xl md:text-2xl flex items-center gap-2 md:gap-[10px] text-textColor order-1 flex-shrink-0"
+                className="text-2xl flex items-center gap-[10px] text-textColor order-1"
               >
-                <div className="min-w-[40px] md:min-w-[55px]">
+                <div className="min-w-[55px]">
                   <Image
                     src={isGeneral ? '/postiz.svg' : '/logo.svg'}
-                    width={40}
-                    height={38}
-                    className="md:w-[55px] md:h-[53px]"
+                    width={55}
+                    height={53}
                     alt="Logo"
                   />
                 </div>
                 <div
-                  className={clsx(
-                    !isGeneral ? 'mt-[8px] md:mt-[12px]' : 'min-w-[60px] md:min-w-[80px]',
-                    'hidden sm:block'
-                  )}
+                  className={clsx(!isGeneral ? 'mt-[12px]' : 'min-w-[80px]')}
                 >
                   {isGeneral ? (
                     <PostizLogo
-                      width={60}
-                      height={27}
-                      className="text-textColor md:w-[80px] md:h-[36.5px]"
+                      width={80}
+                      height={36.5}
+                      className="text-textColor"
                     />
                   ) : (
                     'Postit'
                   )}
                 </div>
               </Link>
-
-              {/* Desktop Navigation - Hidden on mobile */}
               {user?.orgId &&
               (user.tier !== 'FREE' || !isGeneral || !billingEnabled) ? (
-                <div className="hidden md:block order-2">
-                  <TopMenu />
-                </div>
+                <TopMenu />
               ) : (
                 <></>
               )}
-
-              {/* Mobile Navigation + System Buttons */}
-              <div className="flex items-center gap-2 md:gap-[8px] order-3">
-                {/* Mobile Navigation Button */}
-                {user?.orgId &&
-                (user.tier !== 'FREE' || !isGeneral || !billingEnabled) && (
-                  <MobileNavigation />
-                )}
-
-                {/* System Buttons - Responsive */}
-                <div
-                  id="systray-buttons"
-                  className="flex items-center gap-1 md:gap-[8px]"
-                >
-                  <div className="hidden sm:block">
-                    <LanguageComponent />
-                  </div>
-                  <div className="hidden sm:block">
-                    <ChromeExtensionComponent />
-                  </div>
-                  <ModeComponent />
-                  <SettingsComponent />
-                  <div className="hidden sm:block">
-                    <NotificationComponent />
-                  </div>
-                  <OrganizationSelector />
-                </div>
+              <div
+                id="systray-buttons"
+                className="flex items-center justify-self-end gap-[8px] order-2 md:order-3"
+              >
+                <LanguageComponent />
+                <ChromeExtensionComponent />
+                <ModeComponent />
+                <SettingsComponent />
+                <NotificationComponent />
+                <OrganizationSelector />
               </div>
             </nav>
             <div className="flex-1 flex">
-              <div className="flex-1 rounded-xl md:rounded-3xl px-2 md:px-0 py-3 md:py-[17px] flex flex-col">
+              <div className="flex-1 rounded-3xl px-0 py-[17px] flex flex-col">
                 {user.tier === 'FREE' && isGeneral && billingEnabled ? (
                   <>
-                    <div className="text-center mb-4 md:mb-[20px] text-base md:text-xl">
-                      <h1 className="text-xl md:text-3xl lg:text-3xl">
+                    <div className="text-center mb-[20px] text-xl [@media(max-width:1024px)]:text-xl">
+                      <h1 className="text-3xl [@media(max-width:1024px)]:text-xl">
                         {t(
                           'join_1000_entrepreneurs_who_use_postiz',
                           'Join 1000+ Entrepreneurs Who Use Postiz'

@@ -30,7 +30,6 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
   return (
     <html className={interClass}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={clsx(chakra.className, 'dark text-primary !bg-primary')}>

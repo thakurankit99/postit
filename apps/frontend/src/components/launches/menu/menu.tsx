@@ -129,7 +129,7 @@ export const Menu: FC<{
     );
     modal.openModal({
       classNames: {
-        modal: 'w-[95vw] max-w-[600px] bg-transparent text-textColor',
+        modal: 'w-[100%] max-w-[600px] bg-transparent text-textColor',
       },
       size: '100%',
       withCloseButton: false,
@@ -145,7 +145,7 @@ export const Menu: FC<{
     );
     modal.openModal({
       classNames: {
-        modal: 'w-[95vw] max-w-[600px] bg-transparent text-textColor',
+        modal: 'w-[100%] max-w-[600px] bg-transparent text-textColor',
       },
       size: '100%',
       withCloseButton: false,
@@ -168,7 +168,7 @@ export const Menu: FC<{
     );
     modal.openModal({
       classNames: {
-        modal: 'w-[95vw] max-w-[600px] bg-transparent text-textColor',
+        modal: 'w-[100%] max-w-[600px] bg-transparent text-textColor',
       },
       size: '100%',
       withCloseButton: false,
@@ -193,7 +193,7 @@ export const Menu: FC<{
     );
     modal.openModal({
       classNames: {
-        modal: 'w-[95vw] max-w-[600px] bg-transparent text-textColor',
+        modal: 'w-[100%] max-w-[600px] bg-transparent text-textColor',
       },
       size: '100%',
       withCloseButton: false,

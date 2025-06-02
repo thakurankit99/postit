@@ -21,34 +21,33 @@ export default async function AuthLayout({
       <ReturnUrlComponent />
       <div className="absolute start-0 top-0 z-[0] h-[100vh] w-[100vw] overflow-hidden bg-loginBg bg-contain bg-no-repeat bg-left-top" />
       <div className="relative z-[1] px-3 lg:pr-[100px] xs:mt-[70px] flex justify-center lg:justify-end items-center h-[100vh] w-[100vw] overflow-hidden">
-        <div className="w-full max-w-lg min-h-[500px] md:h-[614px] flex flex-col bg-loginBox bg-no-repeat bg-contain">
+        <div className="w-full max-w-lg h-[614px] flex flex-col bg-loginBox bg-no-repeat bg-contain">
           <div className="w-full relative">
             <div className="custom:fixed custom:text-start custom:left-[20px] custom:justify-start custom:top-[20px] absolute -top-[100px] text-textColor justify-center items-center w-full flex gap-[10px]">
               <Image
                 src={isGeneralServerSide() ? '/postiz.svg' : '/logo.svg'}
-                width={40}
-                height={38}
-                className="md:w-[55px] md:h-[53px]"
+                width={55}
+                height={53}
                 alt="Logo"
               />
               <div
                 className={clsx(
-                  !isGeneralServerSide() ? 'mt-[8px] md:mt-[12px]' : 'min-w-[120px] md:min-w-[80px]'
+                  !isGeneralServerSide() ? 'mt-[12px]' : 'min-w-[80px]'
                 )}
               >
                 {isGeneralServerSide() ? (
                   <PostizLogo
-                    width={120}
-                    height={55}
-                    className="text-textColor md:w-[200px] md:h-[91px]"
+                    width={200}
+                    height={91}
+                    className="text-textColor"
                   />
                 ) : (
-                  <div className="text-2xl md:text-[40px]">{t('gitroom', 'Postit')}</div>
+                  <div className="text-[40px]">{t('gitroom', 'Postit')}</div>
                 )}
               </div>
             </div>
           </div>
-          <div className="p-4 md:p-[32px] w-full min-h-[400px] md:h-[660px] text-textColor rbox">
+          <div className="p-[32px] w-full h-[660px] text-textColor rbox">
             {children}
           </div>
           <div className="flex flex-1 flex-col">
