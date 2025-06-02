@@ -6,6 +6,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import loadDynamic from 'next/dynamic';
 import { isGeneralServerSide } from '@gitroom/helpers/utils/is.general.server.side';
+import { Footer } from '@gitroom/frontend/components/layout/footer';
 const ReturnUrlComponent = loadDynamic(() => import('./return.url.component'));
 export default async function AuthLayout({
   children,
@@ -60,6 +61,9 @@ export default async function AuthLayout({
           <div className="absolute top-0 bg-gradient-to-t from-customColor9 w-[1px] -translate-x-[22px] h-full" />
           <div className="absolute end-0 bg-gradient-to-l from-customColor9 h-[1px] -translate-y-[22px] w-full" />
         </div>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 z-[2]">
+        <Footer />
       </div>
     </div>
   );
