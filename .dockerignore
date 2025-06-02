@@ -1,15 +1,9 @@
 # We want the docker builds to be clean, and as fast as possible. Don't send
 # any half-built stuff in the build context as a pre-caution (also saves copying
 # 180k files in node_modules that isn't used!).
-
-# Dependencies
 **/node_modules
 node_modules/*
 node_modules
-**/pnpm-store
-**/.pnpm-store
-
-# Build outputs
 docker-data/*
 dist
 .nx
@@ -18,58 +12,12 @@ dist
 /apps/workers/dist
 /apps/cron/dist
 /apps/commands/dist
-**/dist
-**/.next
-
-# Development files
 .devcontainer
 **/.git
-.git
-.github
-**/*.vscode
-.vscode
-**/.DS_Store
-.DS_Store
-
-# Documentation and configs
 **/*.md
 **/LICENSE
-README.md
-CONTRIBUTING.md
-CODE_OF_CONDUCT.md
-SECURITY.md
-
-# Logs and cache
 **/npm-debug.log
-**/yarn-debug.log
-**/yarn-error.log
-**/pnpm-debug.log
-**/.npm
-**/.yarn
+**/*.vscode
+.git
+.github
 reports
-**/coverage
-**/.nyc_output
-
-# Test files
-**/*.test.js
-**/*.test.ts
-**/*.spec.js
-**/*.spec.ts
-**/jest.config.*
-**/__tests__
-**/__mocks__
-
-# Environment and config files (keep only what's needed)
-.env.local
-.env.development
-.env.test
-**/.eslintrc*
-**/tsconfig.json
-**/tailwind.config.*
-**/postcss.config.*
-**/next.config.*
-
-# Temporary files
-**/tmp
-**/temp
-**/.tmp
