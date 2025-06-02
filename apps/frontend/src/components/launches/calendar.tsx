@@ -503,7 +503,7 @@ export const CalendarColumn: FC<{
           closeOnEscape: false,
           withCloseButton: false,
           classNames: {
-            modal: 'w-[100%] max-w-[1400px] bg-transparent text-textColor',
+            modal: 'w-[95vw] max-w-[1400px] bg-transparent text-textColor',
           },
           children: (
             <ExistingData value={data}>
@@ -554,7 +554,7 @@ export const CalendarColumn: FC<{
       closeOnEscape: false,
       withCloseButton: false,
       classNames: {
-        modal: 'w-[100%] max-w-[1400px] bg-transparent text-textColor',
+        modal: 'w-[95vw] max-w-[1400px] bg-transparent text-textColor',
       },
       children: (
         <AddEditModal
@@ -591,7 +591,7 @@ export const CalendarColumn: FC<{
         closeOnEscape: true,
         withCloseButton: false,
         classNames: {
-          modal: 'w-[100%] max-w-[1400px] bg-transparent text-textColor',
+          modal: 'w-[95vw] max-w-[1400px] bg-transparent text-textColor',
         },
         children: <StatisticsModal postId={id} />,
         size: '80%',

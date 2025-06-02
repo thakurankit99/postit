@@ -591,7 +591,7 @@ Here are the things you can do:
       <div
         id="add-edit-modal"
         className={clsx(
-          'flex flex-col md:flex-row p-[10px] rounded-[4px] bg-primary gap-[20px]'
+          'flex flex-col lg:flex-row p-2 md:p-[10px] rounded-[4px] bg-primary gap-3 md:gap-[20px] max-h-[90vh] overflow-y-auto'
         )}
         style={{
           padding,
@@ -604,11 +604,11 @@ Here are the things you can do:
         )}
         <div
           className={clsx(
-            'flex flex-col gap-[16px] transition-all duration-700 whitespace-nowrap',
-            !expend.expend ? 'flex-1 animate-overflow' : 'w-0 overflow-hidden'
+            'flex flex-col gap-3 md:gap-[16px] transition-all duration-700',
+            !expend.expend ? 'flex-1 animate-overflow' : 'w-0 overflow-hidden lg:whitespace-nowrap'
           )}
         >
-          <div className="relative flex gap-[20px] flex-col flex-1 rounded-[4px] border border-customColor6 bg-sixth p-[16px] pt-0">
+          <div className="relative flex gap-3 md:gap-[20px] flex-col flex-1 rounded-[4px] border border-customColor6 bg-sixth p-3 md:p-[16px] pt-0">
             <TopTitle title={existingData?.group ? 'Edit Post' : 'Create Post'}>
               <div className="flex items-center">
                 <PostToOrganization
@@ -645,7 +645,7 @@ Here are the things you can do:
             </TopTitle>
 
             {!existingData.integration && integrations.length > 1 ? (
-              <div className="w-full max-w-[600px] overflow-y-auto pb-[10px]">
+              <div className="w-full max-w-full lg:max-w-[600px] overflow-y-auto pb-2 md:pb-[10px]">
                 <PickPlatforms
                   toolTip={true}
                   integrations={integrations.filter((f) => !f.disabled)}
@@ -792,10 +792,10 @@ Here are the things you can do:
             ) : null}
           </div>
           <div className="relative min-h-[68px] flex flex-col rounded-[4px] border border-customColor6 bg-sixth">
-            <div className="gap-[10px] relative flex flex-col justify-center items-center min-h-full pe-[16px]">
+            <div className="gap-2 md:gap-[10px] relative flex flex-col justify-center items-center min-h-full pe-3 md:pe-[16px]">
               <div
                 id="add-edit-post-dialog-buttons"
-                className="flex flex-row flex-wrap w-full h-full gap-[10px] justify-end items-center"
+                className="flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 md:gap-[10px] justify-end items-center"
               >
                 <Submitted
                   updateOrder={updateOrder}
@@ -882,13 +882,13 @@ Here are the things you can do:
         </div>
         <div
           className={clsx(
-            'flex gap-[20px] flex-col rounded-[4px] border-customColor6 bg-sixth flex-1 transition-all duration-700',
+            'flex gap-3 md:gap-[20px] flex-col rounded-[4px] border-customColor6 bg-sixth flex-1 transition-all duration-700',
             !selectedIntegrations.length
               ? 'flex-grow-0 overflow-hidden'
               : 'flex-grow-1 border animate-overflow'
           )}
         >
-          <div className="mx-[16px]">
+          <div className="mx-3 md:mx-[16px]">
             <TopTitle title="" removeTitle={true}>
               <TagsComponent
                 name="tags"
@@ -913,7 +913,7 @@ Here are the things you can do:
             </TopTitle>
           </div>
           {!!selectedIntegrations.length && (
-            <div className="flex-1 flex flex-col p-[16px] pt-0">
+            <div className="flex-1 flex flex-col p-3 md:p-[16px] pt-0">
               <ProvidersOptions
                 allIntegrations={props.allIntegrations || []}
                 integrations={selectedIntegrations}

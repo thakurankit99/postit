@@ -153,7 +153,7 @@ const FirstStep: FC = (props) => {
         closeOnEscape: false,
         withCloseButton: false,
         classNames: {
-          modal: 'w-[100%] max-w-[1400px] bg-transparent text-textColor',
+          modal: 'w-[95vw] max-w-[1400px] bg-transparent text-textColor',
         },
         children: (
           <AddEditModal
@@ -275,7 +275,7 @@ export const GeneratorPopup = () => {
     modals.closeAll();
   }, []);
   return (
-    <div className="bg-sixth p-[32px] w-full max-w-[920px] mx-auto flex flex-col rounded-[4px] border border-customColor6 relative">
+    <div className="bg-sixth p-4 md:p-[32px] w-full max-w-[920px] mx-auto flex flex-col rounded-[4px] border border-customColor6 relative max-h-[90vh] overflow-y-auto">
       <button
         onClick={closeAll}
         className="outline-none absolute end-[20px] top-[15px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"
